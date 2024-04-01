@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+    rabbitmq:
+        container_name: rabbitmq
+        image: rabbitmq:3-management
+        restart: always
+        ports:
+            - "5672:5672"
+            - "15672:15672"
+            - "15692:15692"
+        environment:
+            - RABBITMQ_DEFAULT_USER=mirero
+            - RABBITMQ_DEFAULT_PASS=system
+        labels:
+            group: "system"
